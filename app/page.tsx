@@ -5,14 +5,13 @@ import { CardPrimary } from './components/card-primary';
 export default function Home() {
   return (
     <div className="bg-background text-foreground">
-      <p>Lisa</p>
-      {/* <Header />
+      <Header />
       <CardPrimaryLayout>
         <CardPrimary />
         <CardPrimary />
         <CardPrimary />
         <CardPrimary />
-      </CardPrimaryLayout> */}
+      </CardPrimaryLayout>
     </div>
   );
 }
