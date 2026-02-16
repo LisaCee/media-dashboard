@@ -16,16 +16,6 @@ const config = {
                 foreground: "hsl(var(--foreground))",
                 "muted-foreground": "hsl(var(--muted-foreground))"
             },
-            fontFamily: {
-                sans: ['var(--font-family-sans)'],
-            },
-            fontSize: {
-                body: 'var(--body-font-size)',
-            },
-            fontWeight: {
-                regular: 'var(--font-weight-regular)',
-                bold: 'var(--font-weight-bold)',
-            },
         }
     },
     plugins: []

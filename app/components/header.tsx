@@ -1,18 +1,37 @@
 "use client";
 
-import React, { useState } from "react";
+interface HeaderProps {
+  isDark: boolean;
+  setIsDark: (value: boolean) => void;
+}
 
-export function Header() {
-  const [mode, setMode ] = useState<string>("dark");
-
+export function Header({ isDark, setIsDark }: HeaderProps) {
   return (
-    <div className="flex flex-col md:flex-row md:justify-between">
+    <div className="flex flex-col gap-3 md:flex-row md:justify-between">
       <div className="flex flex-col">
-        <h1 className="text-lg font-bold">Social Media Dashboard</h1>
-        <p>Total Followers</p>
+        <h1 className="font-bold text-xl md:text-2xl">Social Media Dashboard</h1>
+        <p className="text-xs font-bold text-muted-foreground  md:text-sm">Total Followers</p>
       </div>
-      <hr className="border border-white w-full md:hidden" />
-      <p className="capitalize">{mode} Mode</p>
+
+      <hr className="border-t dark:border-muted-foreground w-full md:hidden" />
+
+      <div className="flex flex-row justify-between gap-2 md:self-center">
+        <p className="text-xs font-bold text-muted-foreground md:text-sm">
+          {isDark ? 'Dark' : 'Light'} Mode
+        </p>
+        <div>
+          <input
+            type="checkbox"
+            id="darkMode"
+            name="darkMode"
+            checked={isDark}
+            onChange={(e) => setIsDark(e.target.checked)}
+          />
+          <label htmlFor="darkMode" className="sr-only">
+            Select a color mode
+          </label>
+        </div>
+      </div>
     </div>
   );
 }

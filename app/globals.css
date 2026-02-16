@@ -3,6 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --background: 230 17% 14%;
+  /* Light theme */
+  --background: 0 100% 100%;
+  --background-pattern: 225 100% 98%;
+  --card: 227 47% 96%;
   --foreground: 230 17% 14%;
+  --muted-foreground: 228 12% 44%;
+  --toggle: 230 22% 74%;
+}
+
+.dark {
+  /* Dark theme */
+  --background: 230 17% 14%;
+  --background-pattern: 232 19% 15%;
+  --card: 228 28% 20%;
+  --foreground: 0 100% 100%;
+  --muted-foreground: 230 22% 74%;
 }
