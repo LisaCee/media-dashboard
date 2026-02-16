@@ -1,9 +1,18 @@
 import { Header } from "./components/header";
-
+import { CardPrimaryLayout } from './components/layouts/card-primary-layout';
+import { CardPrimary } from './components/card-primary';
+ 
 export default function Home() {
   return (
-    <div>
-      <Header />
+    <div className="bg-background text-foreground">
+      <p>Lisa</p>
+      {/* <Header />
+      <CardPrimaryLayout>
+        <CardPrimary />
+        <CardPrimary />
+        <CardPrimary />
+        <CardPrimary />
+      </CardPrimaryLayout> */}
     </div>
   );
 }
