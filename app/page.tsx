@@ -18,14 +18,17 @@ export default function Home() {
   }, [isDark]);
 
   return (
-    <div>
-      <Header isDark={isDark} setIsDark={setIsDark} />
-      {/* <CardPrimaryLayout>
+    <div className="mx-5 my-7 md:mx-20 md:my-10">
+      <div className="absolute inset-x-0 top-0 h-1/3 bg-bgPattern rounded-b-xl pointer-events-none"></div>
+      <div className="relative">
+        <Header isDark={isDark} setIsDark={setIsDark} />
+        {/* <CardPrimaryLayout>
         <CardPrimary />
         <CardPrimary />
         <CardPrimary />
         <CardPrimary />
       </CardPrimaryLayout> */}
+      </div>
     </div>
   );
 }
