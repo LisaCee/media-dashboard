@@ -14,7 +14,10 @@ const config = {
                 bgPattern: "hsl(var(--background-pattern))",
                 card: "hsl(var(--card))",
                 foreground: "hsl(var(--foreground))",
-                "muted-foreground": "hsl(var(--muted-foreground))"
+                "muted-foreground": "hsl(var(--muted-foreground))",
+                "brand-red": "hsl(var(--brand-red))",
+                "brand-green": "hsl(var(--brand-green))",
+                "facebook-blue": "hsl(var(--facebook-blue))"
             },
         }
     },

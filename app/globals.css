@@ -10,6 +10,11 @@
   --foreground: 230 17% 14%;
   --muted-foreground: 228 12% 44%;
   --toggle: 230 22% 74%;
+
+  /* Global colors*/
+  --brand-red: 365 69% 56%;
+  --brand-green: 163 72% 41%;
+  --facebook-blue: 208 92% 53%;
 }
 
 .dark {
