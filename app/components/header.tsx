@@ -5,12 +5,18 @@ interface HeaderProps {
   setIsDark: (value: boolean) => void;
 }
 
+import { followers } from '../data/mockData';
+
 export function Header({ isDark, setIsDark }: HeaderProps) {
+  const formattedFollowers = followers.toLocaleString();
+
   return (
     <div className="flex flex-col gap-3 md:flex-row md:justify-between">
       <div className="flex flex-col">
         <h1 className="font-bold text-xl md:text-2xl">Social Media Dashboard</h1>
-        <p className="text-xs font-bold text-muted-foreground  md:text-sm">Total Followers</p>
+        <p className="text-xs font-bold text-muted-foreground  md:text-sm">
+          Total Followers: {formattedFollowers}
+        </p>
       </div>
 
       <hr className="border-t dark:border-muted-foreground w-full md:hidden" />

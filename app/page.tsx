@@ -19,15 +19,15 @@ export default function Home() {
 
   return (
     <div className="mx-5 my-7 md:mx-20 md:my-10">
-      <div className="absolute inset-x-0 top-0 h-1/3 bg-bgPattern rounded-b-xl pointer-events-none"></div>
-      <div className="relative">
+      <div className="absolute inset-x-0 top-0 h-1/4 bg-bgPattern rounded-b-xl pointer-events-none"></div>
+      <div className="flex flex-col gap-10 relative">
         <Header isDark={isDark} setIsDark={setIsDark} />
-        {/* <CardPrimaryLayout>
-        <CardPrimary />
-        <CardPrimary />
-        <CardPrimary />
-        <CardPrimary />
-      </CardPrimaryLayout> */}
+        <CardPrimaryLayout>
+          <CardPrimary />
+          <CardPrimary />
+          <CardPrimary />
+          <CardPrimary />
+        </CardPrimaryLayout>
       </div>
     </div>
   );
