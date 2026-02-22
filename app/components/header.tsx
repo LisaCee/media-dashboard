@@ -1,14 +1,13 @@
 "use client";
 
 interface HeaderProps {
+  totalFollowers: number;
   isDark: boolean;
   setIsDark: (value: boolean) => void;
 }
 
-import { followers } from '../data/mockData';
-
-export function Header({ isDark, setIsDark }: HeaderProps) {
-  const formattedFollowers = followers.toLocaleString();
+export function Header({ totalFollowers, isDark, setIsDark }: HeaderProps) {
+  const formattedFollowers = totalFollowers.toLocaleString();
 
   return (
     <div className="flex flex-col gap-3 md:flex-row md:justify-between">
