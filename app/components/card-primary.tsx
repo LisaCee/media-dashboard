@@ -1,27 +1,36 @@
-// border, icon, details
 import Image from 'next/image';
+import type { Service } from '../data/mockData';
 
-interface CardPrimaryProps {
-  serviceData: {
-    username: string;
-    followers: number;
-    dailyChange: number;
-  };
+function formatNumbers(number: number) {
+  if (number < 1_000) {
+    return number.toString();
+  } else if (number < 1_000_000) {
+    return parseFloat((number / 1000).toFixed(1)) + 'k';
+  } else {
+    return parseFloat((number / 1_000_000).toFixed(1)) + 'M';
+  }
 }
 
-export function CardPrimary({ serviceData }: CardPrimaryProps) {
-  const { username, followers, dailyChange } = serviceData || {};
+interface CardProps {
+  service: Service;
+}
+
+export function CardPrimary({ service }: CardProps) {
+  const { username, followers, dailyChange, logoSrc, serviceName, borderClass } = service || {};
+
   const isNegativeChange = dailyChange < 0;
 
   return (
-    <div className="flex flex-col items-center gap-6 bg-card py-6 rounded-lg border-t-[4px] border-facebook-blue">
+    <div
+      className={`flex flex-col items-center gap-6 bg-card py-6 w-[300px] rounded-lg service-border ${borderClass} md:p-6 md:w-full`}
+    >
       <div className="flex gap-2 items-center">
-        <Image src="/brand-icons/icon-facebook.svg" alt="facebook" width={20} height={20}></Image>
+        <Image src={logoSrc} alt={serviceName} width={20} height={20}></Image>
         <p className="text-xs font-bold text-muted-foreground">{username}</p>
       </div>
 
       <div className="flex flex-col gap-1 items-center">
-        <p className="text-5xl font-bold text-foreground">{followers}</p>
+        <p className="text-5xl font-bold text-foreground">{formatNumbers(followers)}</p>
         <p className="text-xs text-muted-foreground font-extralight uppercase tracking-[0.25rem]">
           followers
         </p>
@@ -36,7 +45,7 @@ export function CardPrimary({ serviceData }: CardPrimaryProps) {
         <p
           className={`text-xs font-semibold ${isNegativeChange ? 'text-brand-red' : 'text-brand-green'}`}
         >
-          {Math.abs(dailyChange)} Today
+          {formatNumbers(Math.abs(dailyChange))} Today
         </p>
       </div>
     </div>

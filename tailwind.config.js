@@ -16,8 +16,10 @@ const config = {
                 foreground: "hsl(var(--foreground))",
                 "muted-foreground": "hsl(var(--muted-foreground))",
                 "brand-red": "hsl(var(--brand-red))",
-                "brand-green": "hsl(var(--brand-green))",
-                "facebook-blue": "hsl(var(--facebook-blue))"
+                "brand-green": "hsl(var(--brand-green))", 
+                "facebook-border": "hsl(var(--facebook-border))",
+                "twitter-border": "hsl(var(--twitter-border))",
+                "youtube-border": "hsl(var(--youtube-border))"
             },
         }
     },
