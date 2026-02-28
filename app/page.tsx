@@ -12,7 +12,7 @@ export default function Home() {
   const { totalFollowers } = userData;
 
   const [isDark, setIsDark] = useState(false);
-  const { facebook } = userData.services;
+  const { services } = userData;
 
   useEffect(() => {
     if (isDark) {
@@ -28,10 +28,9 @@ export default function Home() {
       <div className="flex flex-col gap-10 relative">
         <Header totalFollowers={totalFollowers} isDark={isDark} setIsDark={setIsDark} />
         <CardPrimaryLayout>
-          <CardPrimary serviceData={facebook} />
-          <CardPrimary />
-          <CardPrimary />
-          <CardPrimary />
+          {services.map((service) => (
+            <CardPrimary key={service.serviceName} service={service} />
+          ))}
         </CardPrimaryLayout>
       </div>
     </div>
