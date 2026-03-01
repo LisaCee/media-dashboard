@@ -16,13 +16,13 @@ interface CardProps {
 }
 
 export function CardPrimary({ service }: CardProps) {
-  const { username, followers, dailyChange, logoSrc, serviceName, borderClass } = service || {};
+  const { username, followers, followersChange, logoSrc, serviceName, borderClass } = service || {};
 
-  const isNegativeChange = dailyChange < 0;
+  const isNegativeChange = followersChange < 0;
 
   return (
     <div
-      className={`flex flex-col items-center gap-6 bg-card py-6 w-[300px] rounded-lg service-border ${borderClass} md:p-6 md:w-full`}
+      className={`flex flex-col items-center gap-6 bg-card py-6 w-[300px] rounded-b-lg service-border ${borderClass} md:p-6 md:w-full cursor-pointer`}
     >
       <div className="flex gap-2 items-center">
         <Image src={logoSrc} alt={serviceName} width={20} height={20}></Image>
@@ -45,7 +45,7 @@ export function CardPrimary({ service }: CardProps) {
         <p
           className={`text-xs font-semibold ${isNegativeChange ? 'text-brand-red' : 'text-brand-green'}`}
         >
-          {formatNumbers(Math.abs(dailyChange))} Today
+          {formatNumbers(Math.abs(followersChange))} Today
         </p>
       </div>
     </div>
