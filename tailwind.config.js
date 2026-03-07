@@ -13,6 +13,7 @@ const config = {
                 background: "hsl(var(--background))",
                 bgPattern: "hsl(var(--background-pattern))",
                 card: "hsl(var(--card))",
+                "card-hover": "hsl(var(--card-hover))",
                 foreground: "hsl(var(--foreground))",
                 "muted-foreground": "hsl(var(--muted-foreground))",
                 "brand-red": "hsl(var(--brand-red))",

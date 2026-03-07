@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 interface HeaderProps {
   totalFollowers: number;
@@ -20,22 +20,31 @@ export function Header({ totalFollowers, isDark, setIsDark }: HeaderProps) {
 
       <hr className="border-t dark:border-muted-foreground w-full md:hidden" />
 
-      <div className="flex flex-row justify-between gap-2 md:self-center">
+      <div className="flex flex-row items-center justify-between gap-2 md:self-center">
         <p className="text-xs font-bold text-muted-foreground md:text-sm">
           {isDark ? 'Dark' : 'Light'} Mode
         </p>
-        <div>
-          <input
-            type="checkbox"
-            id="darkMode"
-            name="darkMode"
-            checked={isDark}
-            onChange={(e) => setIsDark(e.target.checked)}
+        <button
+          role="switch"
+          aria-checked={isDark}
+          aria-label="Select a color mode"
+          onClick={() => setIsDark(!isDark)}
+          className={`
+              relative inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full
+              transition-colors duration-200 ease-in-out focus-visible:outline-none
+              focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
+            `}
+          style={{
+            background: isDark
+              ? 'linear-gradient(to right, hsl(210, 79%, 56%), hsl(146, 68%, 55%))'
+              : 'hsl(230, 22%, 74%)',
+          }}
+        >
+          <span
+            className={`pointer-events-none block h-5 w-5 rounded-full bg-background shadow-lg
+               ring-0 transition-transform duration-200 ease-in-out ${isDark ? 'translate-x-[1.4rem]' : 'translate-x-[0.2rem]'}`}
           />
-          <label htmlFor="darkMode" className="sr-only">
-            Select a color mode
-          </label>
-        </div>
+        </button>
       </div>
     </div>
   );
