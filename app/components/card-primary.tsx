@@ -1,22 +1,20 @@
 import Image from 'next/image';
 import type { Service } from '../data/mockData';
+import { formatNumbers, getServiceInfo } from '../utils';
 
-function formatNumbers(number: number) {
-  if (number < 1_000) {
-    return number.toString();
-  } else if (number < 1_000_000) {
-    return parseFloat((number / 1000).toFixed(1)) + 'k';
-  } else {
-    return parseFloat((number / 1_000_000).toFixed(1)) + 'M';
-  }
-}
-
-interface CardProps {
+interface CardPrimaryProps {
   service: Service;
 }
 
-export function CardPrimary({ service }: CardProps) {
-  const { username, followers, followersChange, logoSrc, serviceName, borderClass } = service || {};
+export function CardPrimary({ service }: CardPrimaryProps) {
+  if (!service) return;
+
+  const { username, totalFollowers, followersChange, serviceName } = service || {};
+
+  const serviceInfo = getServiceInfo(serviceName);
+  if (!serviceInfo) return;
+
+  const { logoSrc, logoAlt, borderClass } = serviceInfo;
 
   const isNegativeChange = followersChange < 0;
 
@@ -25,12 +23,12 @@ export function CardPrimary({ service }: CardProps) {
       className={`flex flex-col items-center gap-6 bg-card py-6 w-[300px] rounded-b-lg service-border ${borderClass} md:p-6 md:w-full cursor-pointer hover:bg-card-hover`}
     >
       <div className="flex gap-2 items-center">
-        <Image src={logoSrc} alt={serviceName} width={20} height={20}></Image>
+        <Image src={logoSrc} alt={logoAlt} width={20} height={20}></Image>
         <p className="text-xs font-bold text-muted-foreground">{username}</p>
       </div>
 
       <div className="flex flex-col gap-1 items-center">
-        <p className="text-5xl font-bold text-foreground">{formatNumbers(followers)}</p>
+        <p className="text-5xl font-bold text-foreground">{formatNumbers(totalFollowers)}</p>
         <p className="text-xs text-muted-foreground font-extralight uppercase tracking-[0.25rem]">
           followers
         </p>
