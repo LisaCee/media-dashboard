@@ -1,10 +1,3 @@
-interface ServiceInfo {
-    label: string,
-    borderClass: string,
-    logoSrc: string,
-    logoAlt: string,
-}
-
 export function formatNumbers(number: number) {
   if (number < 1_000) {
     return number.toString();

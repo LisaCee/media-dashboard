@@ -22,7 +22,7 @@ export function CardPrimary({ service }: CardPrimaryProps) {
       className={`flex flex-col items-center gap-6 bg-card py-6 w-[300px] rounded-b-lg service-border ${borderColor} md:p-6 md:w-full cursor-pointer hover:bg-card-hover`}
     >
       <div className="flex gap-2 items-center">
-        <Image src={logoSrc} alt={serviceName} width={20} height={20}></Image>
+        <Image src={logoSrc} alt={serviceName} width={20} height={20} />
         <p className="text-xs font-bold text-muted-foreground">{username}</p>
       </div>
 
@@ -35,9 +35,9 @@ export function CardPrimary({ service }: CardPrimaryProps) {
 
       <div className="flex gap-1 items-center">
         {isNegativeChange ? (
-          <Image src="/icons/icon-down.svg" alt="decrease" width={10} height={10}></Image>
+          <Image src="/icons/icon-down.svg" alt="decrease" width={10} height={10} />
         ) : (
-          <Image src="/icons/icon-up.svg" alt="increase" width={10} height={10}></Image>
+          <Image src="/icons/icon-up.svg" alt="increase" width={10} height={10} />
         )}
         <p
           className={`text-xs font-semibold ${isNegativeChange ? 'text-brand-red' : 'text-brand-green'}`}

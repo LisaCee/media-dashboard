@@ -3,6 +3,7 @@
 import { Header } from './components/header';
 import { CardLayout } from './components/card-layout';
 import { CardPrimary } from './components/card-primary';
+import { CardSecondary } from './components/card-secondary';
 
 import { userData } from './data/mockData';
 
@@ -12,7 +13,7 @@ export default function Home() {
   const { totalFollowers } = userData;
 
   const [isDark, setIsDark] = useState(false);
-  const { serviceOverview } = userData;
+  const { serviceOverview, serviceDetail } = userData;
 
   useEffect(() => {
     if (isDark) {
@@ -33,6 +34,11 @@ export default function Home() {
           ))}
         </CardLayout>
         <h2 className="font-bold text-lg md:text-xl">Overview - Today</h2>
+        <CardLayout>
+          {serviceDetail.map((service) => (
+            <CardSecondary key={service.serviceName} serviceDetail={service} />
+          ))}
+        </CardLayout>
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ export function Header({ totalFollowers, isDark, setIsDark }: HeaderProps) {
 
       <hr className="border-t dark:border-muted-foreground w-full md:hidden" />
 
-      <div className="flex flex-row items-center justify-between gap-2 md:self-center">
+      <div className="flex flex-row items-center justify-between gap-2 md:self-center cursor-pointer">
         <p className="text-xs font-bold text-muted-foreground md:text-sm">
           {isDark ? 'Dark' : 'Light'} Mode
         </p>

@@ -58,12 +58,12 @@ export const userData: UserData = {
       detail: [{
         label: 'Page Views',
         value: faker.number.int({ min: 0, max: 100_000 }),
-        change: faker.number.int({ min: -100_000, max: 100_000 }),
+        change: faker.number.int({ min: -5_000, max: 5_000 }),
       },
       {
         label: 'Likes',
         value: faker.number.int({ min: 0, max: 100_000 }),
-        change: faker.number.int({ min: -100_000, max: 100_000 }),
+        change: faker.number.int({ min: -5_000, max: 5_000 }),
       }],
     },
     {
@@ -72,11 +72,11 @@ export const userData: UserData = {
         {
           label: 'Likes',
           value: faker.number.int({ min: 0, max: 100_000 }),
-          change: faker.number.int({ min: -100_000, max: 100_000 }),
+          change: faker.number.int({ min: -5_000, max: 5_000 }),
         }, {
           label: 'Profile Views',
           value: faker.number.int({ min: 0, max: 100_000 }),
-          change: faker.number.int({ min: -100_000, max: 100_000 }),
+          change: faker.number.int({ min: -5_000, max: 5_000 }),
         },
       ],
     },
@@ -85,12 +85,12 @@ export const userData: UserData = {
       detail: [{
         label: 'Retweets',
         value: faker.number.int({ min: 0, max: 100_000 }),
-        change: faker.number.int({ min: -100_000, max: 100_000 }),
+        change: faker.number.int({ min: -5_000, max: 5_000 }),
       },
       {
         label: 'Likes',
         value: faker.number.int({ min: 0, max: 100_000 }),
-        change: faker.number.int({ min: -100_000, max: 100_000 }),
+        change: faker.number.int({ min: -5_000, max: 5_000 }),
       }]
     },
     {
@@ -98,11 +98,11 @@ export const userData: UserData = {
       detail: [{
         label: 'Likes',
         value: faker.number.int({ min: 0, max: 100_000 }),
-        change: faker.number.int({ min: -100_000, max: 100_000 }),
+        change: faker.number.int({ min: -5_000, max: 5_000 }),
       }, {
         label: 'Total Views',
         value: faker.number.int({ min: 0, max: 100_000 }),
-        change: faker.number.int({ min: -100_000, max: 100_000 }),
+        change: faker.number.int({ min: -5_000, max: 5_000 }),
       }],
     },
   ],
