@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import type { Service } from '../data/mockData';
-import { formatNumbers, getServiceInfo } from '../utils';
+import type { ServiceOverview } from '../data/mockData';
+import { formatNumbers, getServiceLogo, getBorderColor, isNegative } from '../utils';
 
 interface CardPrimaryProps {
-  service: Service;
+  service: ServiceOverview;
 }
 
 export function CardPrimary({ service }: CardPrimaryProps) {
@@ -11,19 +11,18 @@ export function CardPrimary({ service }: CardPrimaryProps) {
 
   const { username, totalFollowers, followersChange, serviceName } = service || {};
 
-  const serviceInfo = getServiceInfo(serviceName);
-  if (!serviceInfo) return;
+  const logoSrc = getServiceLogo(serviceName);
 
-  const { logoSrc, logoAlt, borderClass } = serviceInfo;
+  const isNegativeChange = isNegative(followersChange);
 
-  const isNegativeChange = followersChange < 0;
+  const borderColor = getBorderColor(serviceName);
 
   return (
     <div
-      className={`flex flex-col items-center gap-6 bg-card py-6 w-[300px] rounded-b-lg service-border ${borderClass} md:p-6 md:w-full cursor-pointer hover:bg-card-hover`}
+      className={`flex flex-col items-center gap-6 bg-card py-6 w-[300px] rounded-b-lg service-border ${borderColor} md:p-6 md:w-full cursor-pointer hover:bg-card-hover`}
     >
       <div className="flex gap-2 items-center">
-        <Image src={logoSrc} alt={logoAlt} width={20} height={20}></Image>
+        <Image src={logoSrc} alt={serviceName} width={20} height={20}></Image>
         <p className="text-xs font-bold text-muted-foreground">{username}</p>
       </div>
 

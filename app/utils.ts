@@ -15,35 +15,36 @@ export function formatNumbers(number: number) {
   }
 }
 
-export function getServiceInfo(service: string): ServiceInfo|undefined {
-    switch (service) {
+export function getServiceLogo(service: string) {
+  switch (service) {
     case 'facebook':
-      return {
-        label: 'Page Views',
-        borderClass: 'border-facebook',
-        logoSrc: '/brand-icons/icon-facebook.svg',
-        logoAlt: 'Facebook',
-      };
+      return '/brand-icons/icon-facebook.svg';
     case 'twitter':
-      return {
-        label: 'Retweents',
-        borderClass: 'border-twitter',
-        logoSrc: '/brand-icons/icon-twitter.svg',
-        logoAlt: 'Twitter',
-      };
+      return '/brand-icons/icon-twitter.svg';
     case 'instagram':
-      return {
-        label: 'Profile Views',
-        borderClass: 'border-instagram',
-        logoSrc: '/brand-icons/icon-instagram.svg',
-        logoAlt: 'Instagram',
-      };
+      return '/brand-icons/icon-instagram.svg';
     case 'youtube':
-      return {
-        label: 'Total Views',
-        borderClass: 'border-youtube',
-        logoSrc: '/brand-icons/icon-youtube.svg',
-        logoAlt: 'Youtube',
-      };
+      return '/brand-icons/icon-youtube.svg';
+    default:
+      return '';
   }
+}
+
+export function getBorderColor(service: string) {
+  switch (service) {
+    case 'facebook':
+      return 'border-facebook';
+    case 'twitter':
+      return 'border-twitter';
+    case 'instagram':
+      return 'border-instagram';
+    case 'youtube':
+      return 'border-youtube';
+    default:
+      return '';
+  }
+}
+
+export function isNegative(change: number) {
+  return change < 0;
 }
