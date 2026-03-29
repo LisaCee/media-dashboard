@@ -20,22 +20,22 @@ export function CardSecondary({ serviceDetail }: CardSecondaryProps) {
         >
           <div className="flex justify-between items-start">
             <p className="text-xs font-bold text-muted-foreground">{detail.label}</p>
-            <Image src={logoSrc} alt={service} width={20} height={20}/>
+            <Image src={logoSrc} alt={service} width={20} height={20} />
           </div>
           <div className="flex justify-between items-end">
             <p className="text-2xl font-bold text-foreground">{formatNumbers(detail.value)}</p>
             <div className="flex gap-1 items-center">
-                    {isNegative(Math.abs(detail.change)) ? (
-                      <Image src="/icons/icon-down.svg" alt="decrease" width={10} height={10} />
-                    ) : (
-                      <Image src="/icons/icon-up.svg" alt="increase" width={10} height={10} />
-                    )}
-                    <p
-                      className={`text-xs font-semibold ${isNegative(Math.abs(detail.change)) ? 'text-brand-red' : 'text-brand-green'}`}
-                    >
-                      {Math.abs(detail.change)}%
-                    </p>
-                  </div>
+              {isNegative(detail.change) ? (
+                <Image src="/icons/icon-down.svg" alt="decrease" width={10} height={10} />
+              ) : (
+                <Image src="/icons/icon-up.svg" alt="increase" width={10} height={10} />
+              )}
+              <p
+                className={`text-xs font-semibold ${isNegative(detail.change) ? 'text-brand-red' : 'text-brand-green'}`}
+              >
+                {detail.change}%
+              </p>
+            </div>
           </div>
         </div>
       ))}
