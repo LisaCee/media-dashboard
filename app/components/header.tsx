@@ -35,14 +35,12 @@ export function Header({ totalFollowers, isDark, setIsDark }: HeaderProps) {
               focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
             `}
           style={{
-            background: isDark
-              ? 'linear-gradient(to right, hsl(210, 79%, 56%), hsl(146, 68%, 55%))'
-              : 'hsl(230, 22%, 74%)',
+            background: 'linear-gradient(to right, hsl(210, 79%, 56%), hsl(146, 68%, 55%))',
           }}
         >
           <span
             className={`pointer-events-none block h-5 w-5 rounded-full bg-background shadow-lg
-               ring-0 transition-transform duration-200 ease-in-out ${isDark ? 'translate-x-[1.4rem]' : 'translate-x-[0.2rem]'}`}
+               ring-0 transition-transform duration-200 ease-in-out ${isDark ? 'translate-x-[0.2rem]' : 'translate-x-[1.4rem]'}`}
           />
         </button>
       </div>
