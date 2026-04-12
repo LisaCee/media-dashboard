@@ -1,12 +1,12 @@
 'use client';
 
-import { Header } from './components/header';
-import { Footer } from './components/footer';
-import { CardLayout } from './components/card-layout';
-import { CardPrimary } from './components/card-primary';
-import { CardSecondary } from './components/card-secondary';
+import { Header } from '../components/header';
+import { Footer } from '../components/footer';
+import { CardLayout } from '../components/card-layout';
+import { CardPrimary } from '../components/card-primary';
+import { CardSecondary } from '../components/card-secondary';
 
-import { userData } from './data/mockData';
+import { userData } from '../data/mockData';
 
 import { useState, useEffect } from 'react';
 

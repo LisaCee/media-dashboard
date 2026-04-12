@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { type ServiceDetail } from '../data/mockData';
-import { formatNumbers, getServiceLogo, isNegative } from '../utils';
+import { formatNumbers, getServiceLogo, isNegative } from '../app/utils';
 
 interface CardSecondaryProps {
   serviceDetail: ServiceDetail;

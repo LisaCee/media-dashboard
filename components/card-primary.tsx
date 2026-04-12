@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import type { ServiceOverview } from '../data/mockData';
-import { formatNumbers, getServiceLogo, getBorderColor, isNegative } from '../utils';
+import { formatNumbers, getServiceLogo, getBorderColor, isNegative } from '../app/utils';
 
 interface CardPrimaryProps {
   service: ServiceOverview;

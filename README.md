@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Social Media Dashboard
 
-## Getting Started
+A Frontend Mentor challenge — built with Next.js, TypeScript & Tailwind CSS
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-black?style=flat&logo=next.js) ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
+
+## Live demo
+
+[Social Media Dashboard](https://lisacanini.com/social-media-dashboard)
+
+## Overview
+
+A responsive social media analytics dashboard built as a solution to the [Frontend Mentor Social Media Dashboard challenge](https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H). Displays mock follower counts, engagement metrics, and daily stats across multiple social platforms, with a toggleable dark/light mode.
+
+## Features
+
+- Dark / light mode toggle
+- Fully responsive layout
+- Follower count summary cards
+- Today's engagement overview
+- Mock data via Faker.js
+- Per-platform stat breakdowns
+
+## Tech stack
+
+- **Framework**: Next.js (used as project scaffold)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Mock data**: Faker.js
+
+## Getting started
 
 ```bash
+git clone "https://github.com/LisaCee/media-dashboard.git"
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000` in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+├── app/
+│   ├── layout.tsx        # Root layout with theme setup
+│   └── page.tsx          # Main dashboard page
+├── components/
+│   ├── CardPrimary.tsx   # Follower summary cards
+│   ├── CardSecondary.tsx # Today's overview cards
+│   ├── CardLayout.tsx    # Responsive grid wrapper
+│   ├── Header.tsx        # Title + theme toggle
+│   └── Footer.tsx
+└── data/                 # Faker-generated mock data
+```
 
-## Learn More
+## Acknowledgements
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Challenge by [Frontend Mentor](https://www.frontendmentor.io)
+- Solution by [Lisa Canini](https://www.lisacanini.com)
