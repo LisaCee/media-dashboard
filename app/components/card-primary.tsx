@@ -19,7 +19,7 @@ export function CardPrimary({ service }: CardPrimaryProps) {
 
   return (
     <div
-      className={`flex flex-col items-center gap-6 bg-card py-6 w-[300px] rounded-b-lg service-border ${borderColor} md:p-6 md:w-full cursor-pointer hover:bg-card-hover`}
+      className={`flex flex-col items-center gap-6 bg-card p-6 w-[80%] lg:w-full rounded-b-lg service-border ${borderColor} md:p-6 md:w-full cursor-pointer hover:bg-card-hover`}
     >
       <div className="flex gap-2 items-center">
         <Image src={logoSrc} alt={serviceName} width={20} height={20} />

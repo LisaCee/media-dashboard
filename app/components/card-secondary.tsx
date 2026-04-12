@@ -16,7 +16,7 @@ export function CardSecondary({ serviceDetail }: CardSecondaryProps) {
       {serviceDetail.detail.map((detail, i) => (
         <div
           key={service + i}
-          className="flex flex-col bg-card gap-4 py-6 w-[300px] rounded-lg md:p-6 md:w-full cursor-pointer hover:bg-card-hover"
+          className="flex flex-col bg-card gap-4 p-6 w-[300px] rounded-lg md:p-6 md:w-full cursor-pointer hover:bg-card-hover"
         >
           <div className="flex justify-between items-start">
             <p className="text-xs font-bold text-muted-foreground">{detail.label}</p>
