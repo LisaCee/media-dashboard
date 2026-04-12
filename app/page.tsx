@@ -1,6 +1,7 @@
 'use client';
 
 import { Header } from './components/header';
+import { Footer } from './components/footer';
 import { CardLayout } from './components/card-layout';
 import { CardPrimary } from './components/card-primary';
 import { CardSecondary } from './components/card-secondary';
@@ -24,9 +25,9 @@ export default function Home() {
   }, [isDark]);
 
   return (
-    <div className="mx-5 my-7 md:mx-20 md:my-10 max-w-[1600px]">
+    <div className="mx-5 my-7 md:mx-20 md:my-10 max-w-[1600px] flex flex-col flex-1">
       <div className="absolute inset-x-0 top-0 h-1/4 bg-bgPattern rounded-b-xl pointer-events-none"></div>
-      <div className="flex flex-col gap-10 relative">
+      <div className="flex flex-col gap-10 relative h-full">
         <Header totalFollowers={totalFollowers} isDark={isDark} setIsDark={setIsDark} />
         <CardLayout>
           {serviceOverview.map((service) => (
@@ -40,6 +41,7 @@ export default function Home() {
           ))}
         </CardLayout>
       </div>
+      <Footer />
     </div>
   );
 }
