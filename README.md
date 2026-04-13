@@ -6,7 +6,7 @@ A Frontend Mentor challenge — built with Next.js, TypeScript & Tailwind CSS
 
 ## Live demo
 
-[Social Media Dashboard](https://lisacanini.com/social-media-dashboard)
+[Social Media Dashboard](https://dashboard.lisacanini.com/)
 
 ## Overview
 
