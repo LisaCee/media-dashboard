@@ -25,7 +25,7 @@ export default function Home() {
   }, [isDark]);
 
   return (
-    <div className="mx-5 my-7 md:mx-20 md:my-10 max-w-[1600px] flex flex-col flex-1">
+    <div className="mx-5 my-7 md:mx-20 md:my-10 max-w-[1600px] flex flex-col flex-1 gap-8">
       <div className="absolute inset-x-0 top-0 h-1/4 bg-bgPattern rounded-b-xl pointer-events-none"></div>
       <div className="flex flex-col gap-10 relative h-full">
         <Header totalFollowers={totalFollowers} isDark={isDark} setIsDark={setIsDark} />
